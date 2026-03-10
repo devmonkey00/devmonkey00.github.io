@@ -156,7 +156,7 @@ body {
 
 .contact-social .social-link {
   background-color: var(--bg-primary);
-  color: var(--primary-color);
+  color: var(--accent-pink);
   border: 2px solid var(--primary-color);
 }
 
