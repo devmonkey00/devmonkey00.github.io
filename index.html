@@ -1,25 +1,193 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+  <title>Asher - Backend Developer Portfolio</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">Asher Tutanes</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Backend Developer</h1>
+        <p class="hero-subtitle">Building robust, scalable server-side solutions</p>
+        <p class="hero-experience">6 Years of Software Engineering Experience</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/asher-tutanes" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon">💼</span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/devmonkey00" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon">🐙</span>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<!-- <p>Tang ina nyu MGA BOBO!</p>
-  <ol>
-    <li>Adrian </li>
-    <li>Aldrich </li>
-    <li>Manolo </li>
-    <li>Earl </li>
-    <li>Jacobe </li>
-  </ol> -->
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p class="about-text">
+          I'm a passionate Software Engineer with 6 years of experience specializing in backend development. 
+          I focus on creating efficient, maintainable, and scalable server-side applications that power 
+          modern web and mobile experiences.
+        </p>
+        <div class="experience-badge">
+          <span class="badge-number">6</span>
+          <span class="badge-text">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">🛒</div>
+          <h3 class="project-title">E-Commerce</h3>
+          <p class="project-description">
+            Developed and maintained robust e-commerce platforms with secure payment processing, 
+            inventory management, and order fulfillment systems.
+          </p>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">⚙️</div>
+          <h3 class="project-title">Automation Tools</h3>
+          <p class="project-description">
+            Built custom automation solutions to streamline workflows, reduce manual processes, 
+            and improve operational efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Skills & Expertise</h2>
+      
+      <!-- Core Skills -->
+      <div class="skills-category">
+        <h3 class="category-title">Core Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span class="skill-icon">🌐</span>
+            <span class="skill-name">Backend Development</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">🐧</span>
+            <span class="skill-name">Linux Server Management</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">📱</span>
+            <span class="skill-name">Mobile App Development</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon">🔌</span>
+            <span class="skill-name">API Integration Development</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="skills-category">
+        <h3 class="category-title">Frameworks</h3>
+        <div class="skills-grid">
+          <div class="skill-item framework">
+            <span class="skill-name">Drupal</span>
+          </div>
+          <div class="skill-item framework">
+            <span class="skill-name">WordPress</span>
+          </div>
+          <div class="skill-item framework">
+            <span class="skill-name">Laravel</span>
+          </div>
+          <div class="skill-item framework">
+            <span class="skill-name">Django</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programming Languages -->
+      <div class="skills-category">
+        <h3 class="category-title">Programming Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-item language">
+            <span class="skill-name">PHP</span>
+          </div>
+          <div class="skill-item language">
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill-item language">
+            <span class="skill-name">C#</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-text">
+        Interested in working together? I'm always open to discussing new projects and opportunities.
+      </p>
+      <div class="contact-info">
+        <p>Available for freelance work and full-time opportunities</p>
+        <div class="social-links contact-social">
+          <a href="https://www.linkedin.com/in/asher-tutanes" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon">💼</span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/devmonkey00" target="_blank" rel="noopener noreferrer" class="social-link">
+            <span class="social-icon">🐙</span>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Asher Tutanes. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/asher-tutanes" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+          <span class="footer-separator">|</span>
+          <a href="https://github.com/devmonkey00" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
