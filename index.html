@@ -68,6 +68,43 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
+        <article class="project-card featured">
+          <div class="project-carousel" data-carousel tabindex="0">
+            <div class="carousel-viewport">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="images/koob2.vercel.app/SS1.png" alt="KOOB2 Booking homepage with premium car maintenance hero section" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/koob2.vercel.app/SS2.png" alt="KOOB2 service catalog with search and filter options" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/koob2.vercel.app/SS3.png" alt="KOOB2 my bookings dashboard showing user reservations" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Previous screenshot">&#8249;</button>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Next screenshot">&#8250;</button>
+            <div class="carousel-dots" role="tablist" aria-label="Screenshot navigation"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">KOOB2 Booking</h3>
+            <p class="project-description">
+              A full-featured car maintenance booking platform for KOOB2 Garage. Users can browse 
+              a service catalog, reserve appointments, and manage reservations from a personal dashboard 
+              with real-time status tracking.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React JS</span>
+              <span class="project-tag">Vite JS</span>
+              <span class="project-tag">Tailwind CSS</span>
+              <span class="project-tag">Web App</span>
+              <span class="project-tag">Booking System</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <a href="https://koob2.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Live Site →</a>
+          </div>
+        </article>
         <div class="project-card">
           <div class="project-icon">🛒</div>
           <h3 class="project-title">E-Commerce</h3>
@@ -75,15 +112,27 @@
             Developed and maintained robust e-commerce platforms with secure payment processing, 
             inventory management, and order fulfillment systems.
           </p>
+          <div class="project-tags">
+            <span class="project-tag">Laravel</span>
+            <span class="project-tag">Drupal</span>
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">jQuery</span>
+            <span class="project-tag">Bootstrap</span>
+          </div>
         </div>
-        <!-- <div class="project-card">
+        <div class="project-card">
           <div class="project-icon">⚙️</div>
           <h3 class="project-title">Automation Tools</h3>
           <p class="project-description">
             Built custom automation solutions to streamline workflows, reduce manual processes, 
             and improve operational efficiency.
           </p>
-        </div> -->
+          <div class="project-tags">
+            <span class="project-tag">Git</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Python</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -189,5 +238,55 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+      var track = carousel.querySelector('.carousel-track');
+      var slides = carousel.querySelectorAll('.carousel-slide');
+      var prevBtn = carousel.querySelector('.carousel-prev');
+      var nextBtn = carousel.querySelector('.carousel-next');
+      var dotsContainer = carousel.querySelector('.carousel-dots');
+      var currentIndex = 0;
+      var touchStartX = 0;
+
+      slides.forEach(function (_, index) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Screenshot ' + (index + 1));
+        dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        dot.addEventListener('click', function () { goTo(index); });
+        dotsContainer.appendChild(dot);
+      });
+
+      var dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function goTo(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('active', i === currentIndex);
+          dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+        });
+      }
+
+      prevBtn.addEventListener('click', function () { goTo(currentIndex - 1); });
+      nextBtn.addEventListener('click', function () { goTo(currentIndex + 1); });
+
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
+        if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+      });
+
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
+      }, { passive: true });
+    });
+  </script>
 </body>
 </html>
